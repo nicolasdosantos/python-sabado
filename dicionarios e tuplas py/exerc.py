@@ -1,0 +1,1 @@
+pessoas = { "pedro":"branco", "joão":"preto", "carlos":"azul", "henrique":"vermelho", "gustavo":"verde"}
