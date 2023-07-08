@@ -24,3 +24,6 @@ class retangulo:
 c = float(input('Informe o valor do comprimento: '))
 l = float(input('Informe o valor da largura: '))
 
+r = retangulo(c,l)
+print("A area é: ", r.area())
+print("O perimetro é: ", r.perimetro())
