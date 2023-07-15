@@ -1,15 +1,15 @@
 class Tarefa:
     def __init__(self, id, descricao, concluida=False):
-        self.id = id
-        self.descricao = descricao
-        self.concluida = concluida
-
+        self.__id = id
+        self.__descricao = descricao
+        self.__concluida = concluida
+        
 class ListaDeTarefas:
     def __init__(self):
-        self._tarefas = []
+        self.__tarefas = []
 
     def adicionar_tarefa(self, tarefa):
-        self._tarefas.append(tarefa)
+        self.__tarefas.append(tarefa)
 
     def remover_tarefa(self, id):
         for tarefa in self.tarefas:
