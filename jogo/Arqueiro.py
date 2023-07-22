@@ -1,10 +1,11 @@
 from Personagem import Personagem
 
 class Arqueiro(Personagem):
-    def __init__(self,bonus_presisao,habilidades_com_arco):
-        self.bonus_presisao = bonus_presisao
-        self.habilidades_com_arco = habilidades_com_arco
+    def __init__(self, nome, nivel):
+        super().__init__(nome, "Arqueiro", nivel, 75, 7,3)
+        self.bonus_precisao = 10
+        self.habilidades_com_arco = ["Tiro Certeiro", "Flecha Impacto"]
     def atacar(self):
-        pass
+        print(f"O {self.nome} teve uma mira certeira e atacou com sua habilidade {self.habilidades_com_arco[0]} e obteve {self.bonus_precisao}% de precisão adicional!")
     def defender(self):
-        pass
+        print(f"{self.nome} se esquivou do ataque, com sua agilidade alta!")

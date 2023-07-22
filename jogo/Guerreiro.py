@@ -1,10 +1,13 @@
 from Personagem import Personagem
 
 class Guerreiro(Personagem):
-    def __init__(self,bonus_ataque,bonus_defesa):
-        self.bonus_ataque = bonus_ataque
-        self.bonus_defesa = bonus_defesa
+    def __init__(self, nome, nivel):
+        super().__init__(nome, "Guerreiro", nivel, 100, 10, 5)
+        self.bonus_ataque = 5
+        self.bonus_defesa = 10
+
     def atacar(self):
-        pass
+        print(f"O {self.nome} atacou ferozmento com {self.pontos_de_ataque + self.bonus_ataque} pontos de ataque!")
+
     def defender(self):
-        pass
+        print(f"{self.nome} se defendeu com {self.bonus_defesa} pontos de defesa adicionais!")
