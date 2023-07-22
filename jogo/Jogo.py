@@ -37,7 +37,22 @@ class Jogo():
         self.combate.lutar(self.personagem1, self.personagem2)
 
     def iniciar_jogo(self):
-        pass
+        print("Bem-vindo ao jogo de combate sobre as linhas de comando!")
+        while True:
+            comando = input("Digite algum comandos a seguir para realizar alguma ação (criar personagem, criar combate, sair): ")
+            if comando == "criar personagem":
+                nome = input("Digite o nome do personagem: ")
+                classe = input("Digite a classe que os personagem tera(Guerreiro, Mago, Arqueiro, Espadachim): ")
+                self.criar_personagem(nome, classe)
+            elif comando == "criar combate":
+                nome_personagem1 = input("Digite o nome do primeiro personagem: ")
+                nome_personagem2 = input("Digite o nome do segundo personagem: ")
+                self.criar_combate(nome_personagem1, nome_personagem2)
+            elif comando == "sair":
+                print("Saindo! Obrigado por jogar nosso jogo, até a proxima")
+                break
+            else:
+                print("Comando inválido!")
     def listar_personagens(self):
         pass
     def escolher_personagem1(self):
