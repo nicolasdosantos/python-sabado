@@ -5,6 +5,7 @@ from Espadachim import Espadachim
 from Combate import Combate
 
 class Jogo():
+
     def __init__(self):
         self.personagens = []
         self.combate = Combate()
@@ -53,11 +54,31 @@ class Jogo():
                 break
             else:
                 print("Comando inválido!")
+
     def listar_personagens(self):
-        pass
-    def escolher_personagem1(self):
-        pass
-    def escolher_personagem2(self):
-        pass
-    def buscar_personagem(self):
-        pass
+        print("Lista de personagens:")
+        for personagem in self.personagens:
+            print(f"Nome: {personagem.nome}\tClasse: {personagem.classe}")
+
+    def escolher_personagem1(self, nome_personagem):
+        personagem = self._buscar_personagem_por_nome(nome_personagem)
+        if personagem:
+            self.personagem1 = personagem
+            print(f"Personagem 1 escolhido: {personagem.nome} ({personagem.classe})")
+        else:
+            print(f"Personagem selecionado'{nome_personagem}' não foi encontrado,verifique se o nome esta correto")
+
+
+    def escolher_personagem2(self, nome_personagem):
+        personagem = self._buscar_personagem_por_nome(nome_personagem)
+        if personagem:
+            self.personagem2 = personagem
+            print(f"Personagem 2 escolhido: {personagem.nome} ({personagem.classe})")
+        else:
+            print(f"Personagem selecionado'{nome_personagem}' não foi encontrado,verifique se o nome esta correto")
+
+    def _buscar_personagem_por_nome(self, nome_personagem):
+        for personagem in self.personagens:
+            if personagem.nome == nome_personagem:
+                return personagem
+        return None
